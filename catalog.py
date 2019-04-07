@@ -30,7 +30,7 @@ APPLICATION_NAME = "Catalog Application"
 
 # Database connection code
 
-engine = create_engine('sqlite:///catalog.db')
+engine = create_engine('postgresql:///catalog.db')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
