@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block main %}
+  <h2>{{item.name}}</h2>
+  <p>Are you sure you want to delete {{item.name}}?</p>
+  
+  <div class="flash">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+    <li> <strong> {{ message }} </strong> </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+  </div>
+
+    <p>Name: {{item.name}}</p>
+    <p>Description: {{item.description}}</p>
+    <p>Category: {{item.category_id}}</p>
+
+    <form action="{{url_for('deleteItem',category=item.category_id,item=item.id)}}" method = 'POST'>
+    <input type="submit" value="Delete"><br>
+  <!---  <a href='{{url_for('showItems',category=item.category_id)}}'>Cancel</a>
+--->
+  </div>
+{% endblock %}

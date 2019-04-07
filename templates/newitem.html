@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block main %}
+<h1>Create a New Item in {{category.name}}</h1>
+
+<div class="flash">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+  {% for message in messages %}
+  <li> <strong> {{ message }} </strong> </li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+</div>
+
+
+<form action="#" method = 'POST'>
+<p>Name:</p>
+<input type="text" name="name" required>
+<p>Description:</p>
+<textarea rows="4" cols="50" name="description" required></textarea><br>
+
+<input type="submit" value="Create">
+<a href='{{url_for('showItems',category=category.id)}}'>Cancel</a>
+</form>
+
+{% endblock %}

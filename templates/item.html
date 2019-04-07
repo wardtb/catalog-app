@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block main %}
+  <h1>{{item.name}}</h1>
+  <div class="flash">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+    <li> <strong> {{ message }} </strong> </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+  </div>
+  <div>
+    <p>Name: {{item.name}}</p>
+    <p>Description: {{item.description}}</p>
+    <p>Category: {{item.category_id}}</p>
+    <a href="{{url_for('editItem',category=item.category_id,item=item.id)}}">Edit Item</a>
+    <a href="{{url_for('deleteItem',category=item.category_id,item=item.id)}}">Delete Item</a>
+  </div>
+{% endblock %}

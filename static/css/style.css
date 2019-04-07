@@ -1,0 +1,85 @@
+#createButton {
+  background-color: green;
+  color: white;
+  height: 20px;
+  width: 130px;
+}
+
+.topbar {
+  background-color: #008F95;
+  overflow: hidden;
+  color: white;
+  height: 80px;
+  padding-left: 10px;
+}
+
+.topbar h1 {
+  font-size: 35px;
+  vertical-align: middle;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.sidenav {
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  margin-top: 20px;
+  background-color: #E24E42; /* Papaya */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 0px;
+}
+
+.sidenav a {
+  padding: 0px 8px 6px 6px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.sidenav a:hover {
+  color: #E9B000;
+}
+
+.sidenav h2 {
+  color: white;
+  padding-left: 10px;
+  padding-top: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  margin-top: 20px;
+  padding: 0px 10px;
+  color: #E9B000;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main h2 {
+  color: #E24E42;
+}
+
+.main a {
+  color: #E9B000;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.flash {
+  color: green;
+	background-color: #98FB98;
+	width:100%;
+	text-decoration: none;
+
+}
+
+.flash li {
+  color: green;
+	list-style-type: none;
+	text-align: center;
+}

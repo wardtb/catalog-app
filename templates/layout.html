@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <title>Catalog App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+  <div class="topbar">
+    <h1>Catalog App</h1>
+  </div>
+  {% if 'username' not in login_session: %}
+  <a href="{{url_for('showLogin')}}" id="signin">
+      Login with Google+
+  </a>
+  {% else: %}
+  <a href="{{url_for('gdisconnect')}}" id="signout>">
+      Logout
+  </a>
+  {% endif %}
+
+
+  <div class="sidenav">
+    <h2>Categories</h2>
+    {% for j in categories %}
+    <a href="{{url_for('showItems',category = j.id)}}">{{j.name}}</a>
+    {% endfor %}
+  </div>
+  <div class="main">
+  {% block main %}
+
+  {% endblock %}
+  </div>
+</body>
+</html>
